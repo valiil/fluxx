@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+    .img1 {
+    object-fit: cover;
+    width: 50%;
+    height: 50%;
+    margin-left: 100px;
+}
+
+.img2 {
+    height: 400px;
+    object-fit: cover;
+}
+.img3 {
+    height: 500px;
+    object-fit: cover;
+    margin-inline: auto;
+    display: flex;
+    justify-content: end;
+}
+
+.welcome {
+    color: rgb(255, 255, 255);
+    background:   #10316B ;
+    align-items: center;
+    margin-inline: 15%;
+    text-align: center;
+    padding: 20px;
+    border: solid rgb(21, 68, 149) ;  
+    transition: .5s;
+    font-size: 18px;
+}
+
+.welcome:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+
+}
+
+.functionality {
+    display: flex;
+}
+
+.linea {
+    background-color: yellow;
+    width: 250px;
+    height: 5px;
+}
+
+#icons {
+    padding: 0px 50px;
+    background:  #10316B ;
+}
+
+.contenido-iconos {
+    padding-block: 50px;
+    text-align: center;
+}
+
+.card-somos {
+    background:  #10316B ;
+}
+
+.card-somos-border{
+    border-inline-end: 1px solidrgb(19, 61, 133) ;
+}
+
+
+
+.contenido-iconos div i {
+    color:rgb(255, 252, 71) ;
+}
+
+.contenido-iconos div h6 {
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 400;
+    margin: 10px 0px;
+}
+
+.contenido-iconos div p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 20px;
+    padding: 10px;
+}
