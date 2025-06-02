@@ -1,9 +1,9 @@
-   .contactanos {
+.contactanos {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh; 
-       
+    
     }
 
     .formulario {
@@ -139,28 +139,27 @@
         }
     }
 
-    /* Estilos para el modal */
+
     .modal {
-        display: none; /* Ocultar el modal por defecto */
-        position: fixed; /* Permite que el modal esté superpuesto */
-        z-index: 1; /* Posición en el frente */
+        display: none; 
+        position: fixed; 
+        z-index: 1;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; /* Habilitar el desplazamiento si el contenido es más grande que el modal */
-        background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente */
+        overflow: auto; 
+        background-color: rgba(0, 0, 0, 0.4); 
     }
 
     .modal-content {
         background-color: #fefefe;
-        margin: 15% auto; /* Centrar vertical y horizontalmente */
+        margin: 15% auto; 
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
     }
 
-    /* Estilos para el botón de cerrar */
     .close {
         color: #aaa;
         float: right;

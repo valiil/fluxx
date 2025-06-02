@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-
+<app-chat-bot></app-chat-bot>
 <div class="contactanos">
     <div class="formulario align-items-center">
         <div class="box-info">
@@ -11,7 +11,6 @@
             </div>
         </div>
 
-        <!-- Interceptamos el evento submit -->
         <form action="https://formsubmit.co/fluxx1116@gmail.com" method="POST" on:submit={handleSubmit}>
             <div class="input-box">
                 <input type="text" required placeholder="Nombre y apellido" name="name">
@@ -27,7 +26,6 @@
             </div>
             <button type="submit">Enviar mensaje</button>
 
-            <!-- Campos ocultos necesarios para formsubmit -->
             <input type="hidden" name="_next" value="/contactanos">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_formsubmit_id" value="form">

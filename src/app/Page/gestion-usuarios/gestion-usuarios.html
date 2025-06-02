@@ -1,1 +1,92 @@
-<p>gestion-usuarios works!</p>
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <h2>Gestión de Usuarios</h2>
+
+  <form (submit)="guardar(); $event.preventDefault()" class="mb-4">
+    <div class="mb-3">
+      <label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
+      <select
+        id="tipoUsuario"
+        #tipoUsuario
+        class="form-select"
+        (change)="actualizarTipo()"
+        required
+      >
+        <option value="" selected>Seleccione tipo</option>
+        <option value="transportador">Transportador</option>
+        <option value="empresa">Empresa</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre Completo</label>
+      <input id="nombre" #nombre type="text" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input id="telefono" #telefono type="text" class="form-control" required />
+    </div>
+
+    <div *ngIf="tipoSeleccionado === 'transportador'">
+      <div class="mb-3">
+        <label for="documento" class="form-label">Documento</label>
+        <input id="documento" #documento type="text" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="licencia" class="form-label">Licencia</label>
+        <input id="licencia" #licencia type="text" class="form-control" required />
+      </div>
+    </div>
+
+    <div *ngIf="tipoSeleccionado === 'empresa'">
+      <div class="mb-3">
+        <label for="nit" class="form-label">NIT</label>
+        <input id="nit" #nit type="text" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input id="direccion" #direccion type="text" class="form-control" required />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="limpiarFormulario()">Limpiar</button>
+  </form>
+
+  <h3>Listado de Usuarios</h3>
+  <table class="table table-striped" *ngIf="usuarios.length > 0">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Documento / NIT</th>
+        <th>Licencia / Dirección</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios; let i = index">
+        <td>{{ usuario.tipo | titlecase }}</td>
+        <td>{{ usuario.nombre | uppercase }}</td>
+        <td>{{ usuario.telefono }}</td>
+        <td>
+          {{ usuario.tipo === 'transportador' ? (usuario.documento | uppercase) : (usuario.nit | uppercase) }}
+        </td>
+        <td>
+          {{ usuario.tipo === 'transportador' ? (usuario.licencia | uppercase) : (usuario.direccion | titlecase) }}
+        </td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="editar(i)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="eliminar(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="usuarios.length === 0">No hay usuarios registrados.</p>
+</div>
+
+<app-footer></app-footer>

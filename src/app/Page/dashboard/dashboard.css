@@ -14,7 +14,7 @@
     border: none;
   }
 
-  /* 🔧 Ajustes solo para móviles */
+
   @media (max-width: 768px) {
     .container {
       padding-left: 0;
